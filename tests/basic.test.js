@@ -9,6 +9,7 @@ fixture `Getting started with testCafe`
     })
     .beforeEach(async t => {
         //runs before each test
+        await t.setTestSpeed(1)
     })
     .after(async t => {
         //cleaning test data
@@ -29,3 +30,5 @@ fixture `Getting started with testCafe`
 // 2. .beforeEach
 // 3. .after
 // 4. .afterEach
+
+// Setting test speed: setTestSpeed .01 => 1 for debugging purposes
