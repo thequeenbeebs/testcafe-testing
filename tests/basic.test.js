@@ -19,11 +19,14 @@ fixture `Getting started with testCafe`
         //runs after each test
     })
     test('My first testcafe test', async t => {
-        await t.typeText("#developer-name", "John")
-        // await t.wait(3000)
-        await t.click("#submit-button")
+        const developerNameInput = Selector('#developer-name')
+        const submitButton = Selector('#submit-button')
+        const articleText = Selector('#article-header').innerText
 
-        await t.expect(Selector("#article-header").innerText).contains("John")
+        await t.typeText(developerNameInput, "John")
+        // await t.wait(3000)
+        await t.click(submitButton)
+        await t.expect(articleText).contains("John")
     })
 
 // Hooks
@@ -35,3 +38,5 @@ fixture `Getting started with testCafe`
 // Setting test speed: t.setTestSpeed .01 => 1 for debugging purposes
 
 //Pausing the test: t.wait for debugging
+
+// Selector: function that finds a page element in the test
