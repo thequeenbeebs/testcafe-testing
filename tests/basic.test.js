@@ -20,6 +20,7 @@ fixture `Getting started with testCafe`
     })
     test('My first testcafe test', async t => {
         await t.typeText("#developer-name", "John")
+        // await t.wait(3000)
         await t.click("#submit-button")
 
         await t.expect(Selector("#article-header").innerText).contains("John")
@@ -31,4 +32,6 @@ fixture `Getting started with testCafe`
 // 3. .after
 // 4. .afterEach
 
-// Setting test speed: setTestSpeed .01 => 1 for debugging purposes
+// Setting test speed: t.setTestSpeed .01 => 1 for debugging purposes
+
+//Pausing the test: t.wait for debugging
