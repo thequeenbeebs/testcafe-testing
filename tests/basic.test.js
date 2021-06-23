@@ -23,6 +23,8 @@ fixture `Getting started with testCafe`
         const submitButton = Selector('#submit-button')
         const articleText = Selector('#article-header').innerText
 
+        // await t.takeScreenshot({ fullPage: true })
+        // await t.takeElementScreenshot(submitButton)
         await t.typeText(developerNameInput, "John")
         // await t.wait(3000)
         await t.click(submitButton)
@@ -37,6 +39,8 @@ fixture `Getting started with testCafe`
 
 // Setting test speed: t.setTestSpeed .01 => 1 for debugging purposes
 
-//Pausing the test: t.wait for debugging
+// Pausing the test: t.wait for debugging
 
 // Selector: function that finds a page element in the test
+
+// Screenshots: t.takeScreenshot, t.takeElementScreenshot
