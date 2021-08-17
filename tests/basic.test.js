@@ -1,7 +1,8 @@
 import { Selector } from 'testcafe'
 
-fixture `Getting started with testCafe`
+fixture `Getting started with TestCafe`
     .page `https://devexpress.github.io/testcafe/example/`
+    // URL you want to test
     .before(async t => {
         //test setup goes here
         //await runDatabaseReset()
@@ -10,6 +11,7 @@ fixture `Getting started with testCafe`
     .beforeEach(async t => {
         //runs before each test
         await t.setTestSpeed(1)
+        await t.setPageLoadTimeout(0)
     })
     .after(async t => {
         //cleaning test data
@@ -44,3 +46,5 @@ fixture `Getting started with testCafe`
 // Selector: function that finds a page element in the test
 
 // Screenshots: t.takeScreenshot, t.takeElementScreenshot
+
+// Page Load Timeouts: t.setPageLoadTimeout
